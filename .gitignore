@@ -4,16 +4,24 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore bundler config.
+# bundler state
 /.bundle
+/vendor/bundle/
+/vendor/ruby/
 
-# Ignore all logfiles and tempfiles.
+# minimal Rails specific artifacts
+db/*.sqlite3
+/db/*.sqlite3-journal
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development
+# add /config/database.yml if it contains passwords
+# /config/database.yml
+# /config/app_config.yml
+
+# uploaded files in development
 /storage/*
 !/storage/.keep
 
@@ -23,8 +31,71 @@
 /public/assets
 .byebug_history
 
-# Ignore master key for decrypting credentials and more.
+# various artifacts
+**.war
+*.rbc
+*.sassc
+.redcar/
+.sass-cache
+/config/config.yml
+/coverage.data
+/coverage/
+/db/*.javadb/
+/db/*.sqlite3
+/db/schema.rb
+/doc/api/
+/doc/app/
+/doc/features.html
+/doc/specs.html
+/public/cache
+/public/stylesheets/compiled
+/public/system/*
+/public/uploads/*
+/spec/tmp/*
+/cache
+/capybara*
+/capybara-*.html
+/gems
+/specifications
+rerun.txt
+pickle-email-*.html
+.zeus.sock
+
+# byebug
+.byebug_history
+
+# master key for decrypting credentials and more.
 /config/master.key
 
-*.sublime-project
-*.sublime-workspace
+# scm revert files
+**.orig
+
+# Mac finder artifacts
+.DS_Store
+
+# netbeans project directory
+/nbproject/
+
+# rubyMine project files
+.idea
+
+# sublime project files
+*.sublime-*
+!*.sublime-*.example
+
+# textmate project files
+/*.tmproj
+
+# vim artifacts
+**.swp
+
+# environment files that may contain sensitive data
+.env
+.powenv
+
+# tilde files are usually backup files from a text editor
+*~
+
+# any fils.
+.ruby-gemset
+.ruby-version
